@@ -12,8 +12,15 @@ steps:
     password:
        from_secret: ssh_password
 - name: build
+  mavenPomFile: 'pom.xml'
+  mavenOptions: '-Xmx3072m'
+  javaHomeOption: 'JDKVersion'
+  jdkVersionOption: '1.8'
+  
+  
   #image: golang:1.13
   commands:
+    - mvn -f /home/haripreethi/java-poc-master
     - mvn compile
     - mvn package
 
