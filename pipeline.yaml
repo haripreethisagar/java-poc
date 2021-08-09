@@ -1,0 +1,31 @@
+#Drone CI File!
+#Commit Message: Drone! Captain Canary is here!!
+
+kind: pipeline
+type: ssh
+name: default
+
+steps:
+image: appleboy/drone-ssh
+  settings:
+   host: 13.66.184.254
+   user: haripreethi
+   password:
+    from_secret: ssh_password
+
+- name: build
+  #image: golang:1.13
+  commands:
+    - mvn compile
+    - mvn package
+
+#- name: publish  
+  #image: plugins/docker
+  #settings:
+    #username:
+      #from_secret: docker_username
+    #password:
+     # from_secret: docker_password
+   # repo: haripreethisagar/drone3
+    #auto_tag: true
+    #auto_tag_suffix: drone-build
