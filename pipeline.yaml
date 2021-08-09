@@ -5,12 +5,10 @@ kind: pipeline
 type: ssh
 name: default
 
-steps:
-image: appleboy/drone-ssh
-  settings:
-   host: 13.66.184.254
-   user: haripreethi
-   password:
+server:
+  host: 13.66.184.254
+  user: haripreethi
+  password:
     from_secret: ssh_password
 
 - name: build
