@@ -4,12 +4,13 @@
 kind: pipeline
 type: ssh
 name: default
-
-server:
-  host: 13.66.184.254
-  user: haripreethi
-  password:
-    from_secret: ssh_password
+steps:
+- name: ssh1
+  server:
+    host: 13.66.184.254
+    user: haripreethi
+    password:
+       from_secret: ssh_password
 - name: build
   #image: golang:1.13
   commands:
