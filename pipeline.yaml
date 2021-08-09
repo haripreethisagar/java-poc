@@ -23,6 +23,7 @@ steps:
     - mvn -f /home/haripreethi/java-poc-master
     - mvn compile
     - mvn package
+    - ls -R
 
 #- name: publish  
   #image: plugins/docker
