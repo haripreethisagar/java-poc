@@ -2,19 +2,18 @@
 #Commit Message: Drone! Captain Canary is here!!
 
 kind: pipeline
-type: ssh
 name: default
 steps:
-- name: java-poc
+- name: ssh
   image: appleboy/drone-ssh
   settings:
     host: 65.52.34.188
     user: haripreethi
+    port: 22
     password:
        from_secret: ssh_password
 - name: build
   mavenPomFile: 'pom.xml'
-  #image: golang:1.13
   commands:
     - mvn -f /home/haripreethi/java-poc-master
     - mvn compile
