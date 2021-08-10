@@ -5,17 +5,15 @@ kind: pipeline
 type: ssh
 name: default
 steps:
-- name: ssh1
+- name: java-poc
   server:
-    host: 13.66.184.254
+    host: 65.52.34.188
     user: haripreethi
     password:
        from_secret: ssh_password
 - name: build
   mavenPomFile: 'pom.xml'
-  mavenOptions: '-Xmx3072m'
-  javaHomeOption: 'JDKVersion'
-  jdkVersionOption: '1.8'
+  
   
   
   #image: golang:1.13
