@@ -12,7 +12,6 @@ steps:
   build:
      name: pom.xml
      commands: 
-        -mvn -f /home/haripreethi/java-poc-master
         -mvn package -DskipTests=true
   test:
      name: pom.xml
