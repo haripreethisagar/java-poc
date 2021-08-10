@@ -6,16 +6,14 @@ type: ssh
 name: default
 steps:
 - name: java-poc
-  server:
+  image: appleboy/drone-ssh
+  settings:
     host: 65.52.34.188
     user: haripreethi
     password:
        from_secret: ssh_password
 - name: build
   mavenPomFile: 'pom.xml'
-  
-  
-  
   #image: golang:1.13
   commands:
     - mvn -f /home/haripreethi/java-poc-master
