@@ -13,7 +13,8 @@ steps:
   mavenPomFile: 'pom.xml'
   commands:
     - mvn -f /home/haripreethi/java-poc-master
-    - mvn compile
+    - mvn compiler:compile
+    #- mvn compile
     - mvn package
     - ls -R
 
