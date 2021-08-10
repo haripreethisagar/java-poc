@@ -1,17 +1,14 @@
 #Drone CI File!
 #Commit Message: Drone! Captain Canary is here!!
-
 kind: pipeline
+type: ssh
 name: default
+server:
+  host: 65.52.34.188
+  user: haripreethi
+  password:
+    from_secret: ssh_password
 steps:
-- name: ssh
-  image: appleboy/drone-ssh
-  settings:
-    host: 65.52.34.188
-    user: haripreethi
-    port: 22
-    password:
-       from_secret: ssh_password
 - name: build
   mavenPomFile: 'pom.xml'
   commands:
