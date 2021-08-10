@@ -9,19 +9,15 @@ server:
   password:
     from_secret: ssh_password
 steps:
- build:
-     image: pom.xml
-     commands: mvn package -DskipTests=true
- test:
-     image: pom.xml
-     commands: mvn install
+  build:
+     name: pom.xml
+     commands: 
+        -mvn -f /home/haripreethi/java-poc-master
+        -mvn package -DskipTests=true
+  test:
+     name: pom.xml
+     commands: mvn test
 
-  #commands:
-   # - mvn -f /home/haripreethi/java-poc-master
-   # - mvn compiler:compile
-    #- mvn compile
-    #- mvn package
-    #- ls -R
 
 
   
